@@ -8,13 +8,31 @@ export async function PATCH(
 ) {
   try {
     const { id } = await params;
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json(
+        { error: "Invalid ObjectId format" },
+        { status: 400 }
+      );
+    }
+
     const db = await getDatabase();
     const body = await request.json();
 
-    const { party, consent } = body; // party: "requester" | "provider", consent: "approved" | "rejected"
-    if (!party || !consent) {
+    const { party, consent } = body;
+    const validParties = ["requester", "provider"];
+    const validConsents = ["approved", "rejected"];
+
+    if (
+      !party ||
+      !consent ||
+      !validParties.includes(party) ||
+      !validConsents.includes(consent)
+    ) {
       return NextResponse.json(
-        { error: "Party ('requester' | 'provider') and consent ('approved' | 'rejected') are required." },
+        {
+          error:
+            "Invalid payload. 'party' must be 'requester' | 'provider', and 'consent' must be 'approved' | 'rejected'.",
+        },
         { status: 400 }
       );
     }

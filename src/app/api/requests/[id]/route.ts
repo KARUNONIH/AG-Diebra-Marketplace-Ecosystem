@@ -8,6 +8,9 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid ObjectId format" }, { status: 400 });
+    }
     const db = await getDatabase();
     const item = await db
       .collection("requests")
@@ -37,6 +40,9 @@ export async function PATCH(
 ) {
   try {
     const { id } = await params;
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid ObjectId format" }, { status: 400 });
+    }
     const db = await getDatabase();
     const body = await request.json();
 
@@ -79,6 +85,9 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
+    if (!ObjectId.isValid(id)) {
+      return NextResponse.json({ error: "Invalid ObjectId format" }, { status: 400 });
+    }
     const db = await getDatabase();
     const result = await db
       .collection("requests")
