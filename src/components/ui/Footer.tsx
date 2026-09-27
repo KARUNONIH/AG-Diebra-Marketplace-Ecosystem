@@ -67,13 +67,13 @@ export const Footer: React.FC = () => {
             </p>
             <ul className="space-y-2 text-sm text-white/60">
               <li>
-                <Link href="/#pillars" className="hover:text-white transition-colors">
-                  8 Pilar Ekosistem
+                <Link href="/" className="hover:text-white transition-colors">
+                  Tentang Program
                 </Link>
               </li>
               <li>
-                <Link href="/#how-it-works" className="hover:text-white transition-colors">
-                  Alur Kolaborasi
+                <Link href="/#mekanisme" className="hover:text-white transition-colors">
+                  SOP &amp; Alur Kolaborasi
                 </Link>
               </li>
               <li>

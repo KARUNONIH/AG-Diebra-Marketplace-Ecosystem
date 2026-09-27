@@ -44,13 +44,14 @@ export default function CreateResourcePage() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
-      <Link
-        href="/"
-        className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" /> Kembali ke Hub
-      </Link>
+    <div className="bg-[#101D14] text-white min-h-[calc(100vh-5rem)] py-12 relative">
+      <div className="max-w-2xl mx-auto px-6 space-y-6 relative z-10">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" /> Kembali ke Beranda
+        </Link>
 
       <Card variant="glass-elevated">
         <div className="mb-6">
@@ -186,6 +187,7 @@ export default function CreateResourcePage() {
           </div>
         </form>
       </Card>
+      </div>
     </div>
   );
 }

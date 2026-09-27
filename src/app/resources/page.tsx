@@ -55,8 +55,9 @@ export default function ResourcesPage() {
   }, [selectedCategory]);
 
   return (
-    <div className="space-y-8">
-      {/* Top Bar */}
+    <div className="bg-[#101D14] text-white min-h-[calc(100vh-5rem)] py-12 relative">
+      <div className="max-w-7xl mx-auto px-6 space-y-8 relative z-10">
+        {/* Top Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-3 mb-2">
@@ -148,6 +149,7 @@ export default function ResourcesPage() {
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 }

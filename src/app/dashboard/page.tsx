@@ -203,8 +203,18 @@ function DashboardContent() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8 space-y-10">
-      {/* Role Navigation Header */}
+    <div className="bg-[#101D14] text-white min-h-[calc(100vh-5rem)] py-10 relative">
+      {/* Ambient background glow */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(18, 106, 58, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 106, 58, 0.15) 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+      <div className="max-w-7xl mx-auto px-6 space-y-10 relative z-10">
+        {/* Role Navigation Header */}
       <div className="border-b border-white/10 pb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#126A3A]/20 border border-[#126A3A]/40 mb-2">
@@ -1087,6 +1097,7 @@ function DashboardContent() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

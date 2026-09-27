@@ -12,11 +12,11 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Beranda" },
-    { href: "/#pillars", label: "Pilar Ekosistem" },
-    { href: "/#how-it-works", label: "Alur Kolaborasi" },
-    { href: "/requests", label: "Kebutuhan (Need)" },
-    { href: "/resources", label: "Pasokan (Supply)" },
+    { href: "/", label: "Informasi Program" },
+    { href: "/#mekanisme", label: "Mekanisme Kerja" },
+    { href: "/requests", label: "Katalog Kebutuhan" },
+    { href: "/resources", label: "Katalog Pasokan" },
+    { href: "/dashboard", label: "Portal Dashboard" },
   ];
 
   return (
