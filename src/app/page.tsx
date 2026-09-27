@@ -217,14 +217,14 @@ export default function HomePage() {
                 Masuk ke Dashboard Program
               </Button>
             </Link>
-            <a href="#mekanisme">
+            <Link href="/mekanisme">
               <Button
                 variant="dark"
                 icon={<Compass className="w-3.5 h-3.5 text-[#FEBA27]" />}
               >
                 Pelajari Mekanisme Kerja
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* 3 Metric / Guarantee Badges */}

@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/#mekanisme" className="hover:text-white transition-colors">
+                <Link href="/mekanisme" className="hover:text-white transition-colors">
                   SOP &amp; Alur Kolaborasi
                 </Link>
               </li>
