@@ -10,7 +10,6 @@ import {
   Boxes,
   LayoutDashboard,
   ArrowRight,
-  Globe,
   Menu,
   X,
 } from "lucide-react";
@@ -50,12 +49,15 @@ export const Navbar: React.FC = () => {
       }}
     >
       <nav className="container-main flex items-center justify-between h-20">
-        {/* Logo — Exact image branding from agdiebra.com */}
-        <Link href="/" className="flex items-center">
+        {/* Logo — strictly constrained to 36x36px */}
+        <Link href="/" className="flex items-center shrink-0">
           <img
             src="/images/logo/icon-only.webp"
             alt="AG Diebra"
-            className="h-9 w-auto"
+            width={36}
+            height={36}
+            className="h-9 w-9 object-contain"
+            style={{ width: "36px", height: "36px" }}
           />
         </Link>
 
@@ -110,15 +112,8 @@ export const Navbar: React.FC = () => {
           })}
         </ul>
 
-        {/* Desktop CTA & Language pill matching agdiebra.com */}
-        <div className="hidden lg:flex items-center gap-3">
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded border border-white/15 bg-white/5 text-white/80">
-            <Globe className="w-3.5 h-3.5 text-[#FEBA27] shrink-0" />
-            <span className="text-xs font-mono font-bold tracking-wider">
-              Bahasa Indonesia
-            </span>
-          </div>
-
+        {/* Desktop CTA (Language selector removed as requested) */}
+        <div className="hidden lg:flex items-center">
           <Link href="/dashboard" className="btn-partner btn-partner--primary">
             <span>Masuk Dashboard</span>
             <span className="btn-partner__icon" aria-hidden="true">

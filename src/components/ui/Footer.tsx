@@ -16,7 +16,10 @@ export const Footer: React.FC = () => {
               <img
                 src="/images/logo/icon-only.webp"
                 alt="AG Diebra"
-                className="h-9 w-auto"
+                width={36}
+                height={36}
+                className="h-9 w-9 object-contain shrink-0"
+                style={{ width: "36px", height: "36px" }}
               />
               <span>
                 AG <span className="font-light text-white/55">Diebra</span>
