@@ -59,12 +59,21 @@ export default function ResourcesPage() {
       {/* Top Bar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-xs text-white/50 hover:text-white mb-2"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Kembali ke Hub
-          </Link>
+          <div className="flex items-center gap-3 mb-2">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-xs text-white/50 hover:text-white transition-colors"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Kembali ke Beranda
+            </Link>
+            <span className="text-white/20">•</span>
+            <Link
+              href="/dashboard?role=supplier"
+              className="text-xs text-emerald-400 hover:underline"
+            >
+              Ke Dashboard Supplier
+            </Link>
+          </div>
           <h1 className="font-display text-3xl font-bold text-white">
             Katalog Pasokan & Teknologi (Supplies)
           </h1>

@@ -31,7 +31,7 @@ export default function CreateResourcePage() {
       });
 
       if (res.ok) {
-        router.push("/");
+        router.push("/dashboard?role=supplier");
       } else {
         alert("Gagal mendaftarkan sumber daya.");
       }

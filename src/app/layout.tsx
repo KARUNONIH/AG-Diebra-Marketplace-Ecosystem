@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
+import { Footer } from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
   title: "AG Diebra Ecosystem Platform | Agribusiness Marketplace",
   description:
-    "Memadukan agribisnis, teknologi, AI, logistik, dan perdagangan dalam satu ekosistem terintegrasi untuk transformasi pertanian Indonesia.",
+    "Memadukan agribisnis, teknologi, AI, logistik berpendingin, dan hilirisasi perdagangan dalam satu ekosistem terintegrasi untuk transformasi pertanian Indonesia.",
 };
 
 export default function RootLayout({
@@ -27,8 +28,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#101D14] text-white font-body antialiased selection:bg-[#FEBA27] selection:text-[#101D14]">
-        {/* Subtle grid pattern background from agdiebra.com */}
+      <body className="min-h-screen bg-[#101D14] text-white font-body antialiased selection:bg-[#FEBA27] selection:text-[#101D14] flex flex-col">
+        {/* Subtle atmospheric grid pattern background from agdiebra.com */}
         <div
           className="fixed inset-0 pointer-events-none opacity-40 z-0"
           style={{
@@ -40,18 +41,20 @@ export default function RootLayout({
 
         {/* Ambient radial glows */}
         <div
-          className="fixed top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full pointer-events-none z-0"
+          className="fixed top-[-10%] left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full pointer-events-none z-0"
           style={{
             background:
-              "radial-gradient(circle, rgba(18, 106, 58, 0.12) 0%, rgba(212, 175, 55, 0.05) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(18, 106, 58, 0.16) 0%, rgba(212, 175, 55, 0.06) 45%, transparent 70%)",
           }}
         />
 
         <Navbar />
 
-        <main className="relative z-10 pt-28 pb-20 max-w-7xl mx-auto px-6">
+        <main className="relative z-10 pt-20 flex-grow">
           {children}
         </main>
+
+        <Footer />
       </body>
     </html>
   );

@@ -31,7 +31,7 @@ export default function CreateRequestPage() {
       });
 
       if (res.ok) {
-        router.push("/");
+        router.push("/dashboard?role=customer");
       } else {
         alert("Gagal menyimpan permintaan.");
       }
