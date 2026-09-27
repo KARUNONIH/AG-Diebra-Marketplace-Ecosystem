@@ -315,7 +315,7 @@ export default function HomePage() {
         <div className="container-main relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
-              BAGIAN 2 • DOKUMEN BRIEF
+              JARINGAN EKOSISTEM
             </p>
             <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
               Siapa Pengguna Platform Ini?
@@ -422,13 +422,13 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. SECTION: ALUR SISTEM & STUDI KASUS (Clean White Background)           */}
+      {/* 4. SECTION: ALUR SISTEM (Clean White Background)                          */}
       {/* ========================================================================= */}
       <section className="py-20 lg:py-24 bg-white text-slate-900 border-t border-slate-200/80">
         <div className="container-main">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
-              BAGIAN 3 &amp; 4 • ALUR SISTEM
+              ALUR KOLABORASI
             </p>
             <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
               Alur Kerja: Dari Pengajuan ke Kolaborasi
@@ -440,7 +440,7 @@ export default function HomePage() {
           </div>
 
           {/* 5-Step Process Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {systemFlow.map((st, i) => (
               <div
                 key={i}
@@ -463,74 +463,70 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
-          {/* Real Case Example from Brief PDF Page 2 */}
-          <div className="max-w-4xl mx-auto p-8 rounded-2xl border border-slate-200 bg-[#F8FAF9] shadow-sm">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="font-mono text-xs uppercase font-bold text-[#126A3A] tracking-wider">
-                CONTOH KASUS NYATA (STUDI KASUS SISTEM)
-              </span>
-            </div>
-            <h3 className="font-display font-bold text-xl text-slate-900 mb-4">
-              Simulasi Kebutuhan: “Saya membutuhkan lahan ±2 ha untuk pertanian organik.”
-            </h3>
-
-            <div className="space-y-3 font-body text-xs sm:text-sm text-slate-700 leading-relaxed">
-              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
-                <span className="font-mono font-bold text-[#9A6A00] shrink-0">1.</span>
-                <p><strong>Pengajuan:</strong> User A menyampaikan kebutuhan spesifikasi lahan pertanian organik ±2 ha.</p>
-              </div>
-              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
-                <span className="font-mono font-bold text-[#126A3A] shrink-0">2.</span>
-                <p><strong>Pemahaman Kriteria:</strong> AG Diebra menelaah kriteria, status kesuburan tanah, dan riwayat kimia lahan.</p>
-              </div>
-              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
-                <span className="font-mono font-bold text-emerald-700 shrink-0">3.</span>
-                <p><strong>Pencarian Potential Match:</strong> Ditemukan Provider yang memiliki lahan ±3 ha yang berpotensi sesuai.</p>
-              </div>
-              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
-                <span className="font-mono font-bold text-[#9A6A00] shrink-0">4.</span>
-                <p><strong>Validasi &amp; Persetujuan (Consent):</strong> AG Diebra memvalidasi awal. Jika kedua pihak setuju, perkenalan resmi difasilitasi.</p>
-              </div>
-              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-[#126A3A]/10 border border-[#126A3A]/30">
-                <span className="font-mono font-bold text-[#126A3A] shrink-0">5.</span>
-                <p><strong>Bentuk Hasil Kolaborasi:</strong> Kerja sama lahan, Proyek budidaya bersama, Kemitraan pasokan, atau Riset gabungan.</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. SECTION: PRINSIP PENTING (Off-White #F8FAF9)                           */}
+      {/* 5. SECTION: JAMINAN KEAMANAN & PRIVASI (Off-White #F8FAF9)                */}
       {/* ========================================================================= */}
       <section className="py-20 lg:py-24 bg-[#F8FAF9] text-slate-900 border-t border-slate-200/80">
-        <div className="container-main text-center space-y-6 max-w-4xl mx-auto">
-          <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A]">
-            BAGIAN 6 • KONSEP PENTING
-          </p>
-          <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            Platform Ini Bukan Marketplace Terbuka
-          </h2>
-          <p className="font-body text-slate-700 text-sm sm:text-base leading-relaxed">
-            Informasi pihak yang memiliki resource tidak langsung diumbar secara bebas
-            ke publik. Kami menerapkan prinsip kurasi terarah:
-          </p>
-
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs text-center font-display font-bold text-base sm:text-lg text-slate-800 flex flex-wrap items-center justify-center gap-3">
-            <span className="text-[#126A3A]">Discover</span>
-            <span>→</span>
-            <span className="text-[#9A6A00]">Validate</span>
-            <span>→</span>
-            <span className="text-emerald-600">Consent</span>
-            <span>→</span>
-            <span className="text-slate-900">Introduction</span>
+        <div className="container-main">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
+              KEAMANAN &amp; PRIVASI
+            </p>
+            <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+              Kemitraan Terkurasi dengan Privasi Terlindungi
+            </h2>
+            <p className="font-body text-slate-600 text-sm sm:text-base leading-relaxed">
+              Informasi kebutuhan dan sumber daya Anda tidak disebarluaskan secara bebas di internet.
+              Kami mengutamakan validasi tertutup demi kenyamanan dan keamanan bisnis Anda.
+            </p>
           </div>
 
-          <p className="font-body text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            AG Diebra hadir sebagai <em>ecosystem layer</em> yang menjaga privasi, kualitas,
-            dan komitmen kerja sama, bukan hanya tempat transaksi jual-beli spekulatif.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="p-8 rounded-xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#FEBA27]/20 border border-[#FEBA27]/40 flex items-center justify-center text-[#9A6A00] mb-4 shadow-xs">
+                  <ShieldCheck className="w-5 h-5" />
+                </div>
+                <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
+                  Privasi &amp; Data Terjaga
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Detail kontak dan identitas organisasi tidak ditampilkan ke publik sebagai lapak terbuka. Data hanya dibagikan kepada calon mitra yang telah tervalidasi relevan.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-[#126A3A]/10 border border-[#126A3A]/20 flex items-center justify-center text-[#126A3A] mb-4 shadow-xs">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
+                  Kesesuaian Tervalidasi
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Kurator menelaah spesifikasi kebutuhan dan ketersediaan kapasitas secara objektif sehingga pertemuan bisnis lebih tepat sasaran.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-700 mb-4 shadow-xs">
+                  <UserCheck className="w-5 h-5" />
+                </div>
+                <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
+                  Persetujuan Dua Arah
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Tidak ada perkenalan sepihak. Jalur koordinasi langsung hanya dibuka apabila kedua belah pihak menyatakan sepakat untuk saling berkenalan.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

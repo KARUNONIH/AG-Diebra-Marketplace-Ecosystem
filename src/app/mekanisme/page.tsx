@@ -167,8 +167,8 @@ export default function MekanismePage() {
       <section className="py-20 lg:py-24 bg-white text-slate-900 border-t border-slate-200/80">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="font-mono text-xs tracking-[0.18em] uppercase font-semibold text-[#126A3A] mb-2">
-              ALUR SISTEM UTAMA (BAGIAN 3 DOKUMEN BRIEF)
+            <p className="font-mono text-xs tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
+              ALUR SISTEM OPERASIONAL
             </p>
             <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
               Delapan Tahap Operasional Ekosistem
@@ -214,61 +214,26 @@ export default function MekanismePage() {
         </div>
       </section>
 
-      {/* 3. Case Study & Real Example (Off-White Background #F8FAF9) */}
+      {/* 3. Core Concepts (Off-White Background #F8FAF9) */}
       <section className="py-20 lg:py-24 bg-[#F8FAF9] text-slate-900 border-t border-slate-200/80">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="font-mono text-xs tracking-[0.18em] uppercase font-semibold text-[#126A3A] mb-2">
-              BAGIAN 4 DOKUMEN BRIEF
-            </p>
-            <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-              Studi Kasus Nyata
-            </h2>
-          </div>
-
-          <div className="p-8 rounded-2xl border border-slate-200 bg-white shadow-xs space-y-6">
-            <div className="p-4 rounded-xl bg-[#FEBA27]/10 border border-[#FEBA27]/30 text-sm font-display font-bold text-slate-900">
-              {caseStudy.caseText}
-            </div>
-
-            <div className="space-y-4">
-              {caseStudy.steps.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3.5 rounded-lg bg-[#F8FAF9] border border-slate-200/80">
-                  <span className="w-6 h-6 rounded-full bg-[#126A3A] text-white flex items-center justify-center text-xs font-mono font-bold shrink-0">
-                    {idx + 1}
-                  </span>
-                  <div>
-                    <h4 className="font-display font-bold text-xs sm:text-sm text-slate-900 mb-0.5">
-                      {item.label}
-                    </h4>
-                    <p className="font-body text-xs text-slate-600 leading-relaxed">
-                      {item.detail}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Core Concepts (White Background) */}
-      <section className="py-20 lg:py-24 bg-white text-slate-900 border-t border-slate-200/80">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <p className="font-mono text-xs tracking-[0.18em] uppercase font-semibold text-[#126A3A] mb-2">
-              BAGIAN 6 &amp; 7 DOKUMEN BRIEF
+            <p className="font-mono text-xs tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
+              PRINSIP KEMITRAAN
             </p>
             <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-              Konsep Kunci Platform
+              Prinsip Keamanan &amp; Kurasi Platform
             </h2>
+            <p className="font-body text-slate-600 text-sm sm:text-base leading-relaxed mt-2">
+              Fondasi tata kelola yang menjamin kerja sama berjalan terarah, transparan, dan saling menguntungkan.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {coreConcepts.map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-xl border border-slate-200 bg-[#F8FAF9] shadow-xs"
+                className="p-6 rounded-xl border border-slate-200 bg-white shadow-xs"
               >
                 <div className="w-9 h-9 rounded-lg bg-[#FEBA27]/20 border border-[#FEBA27]/40 flex items-center justify-center text-[#9A6A00] mb-4">
                   <ShieldCheck className="w-5 h-5" />
@@ -285,7 +250,7 @@ export default function MekanismePage() {
         </div>
       </section>
 
-      {/* 5. CTA Section (Dark Forest Green) */}
+      {/* 4. CTA Section (Dark Forest Green) */}
       <section className="bg-[#101D14] text-white py-20 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 text-center space-y-6">
           <span className="font-mono text-xs uppercase tracking-widest text-[#FEBA27] font-bold">
