@@ -16,14 +16,14 @@ import {
   Users,
   Compass,
   ArrowUpRight,
-  FileText,
-  Lock,
-  MessageSquare,
+  UserCheck,
+  Layers,
+  Sprout,
+  Activity,
 } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 
 export default function HomePage() {
-  // Categories strictly from Brief PDF (Page 1-2)
+  // 8 Resource & Need categories strictly from Brief PDF (Page 1-2)
   const resourceCategories = [
     {
       title: "Lahan Pertanian & Kebun",
@@ -35,13 +35,13 @@ export default function HomePage() {
       title: "Bahan Baku & Produk Hasil Tani",
       desc: "Pasokan hasil panen mentah, bahan baku olahan agribisnis, serta komoditas segar berkualitas.",
       icon: Boxes,
-      example: "Contoh: Bahan baku reguler industri",
+      example: "Contoh: Pasokan bahan baku reguler",
     },
     {
       title: "Teknologi & Inovasi Pertanian",
       desc: "Perangkat smart farming, instrumentasi sensor, alsintan modern, dan perangkat lunak agribisnis.",
       icon: Cpu,
-      example: "Contoh: Sistem irigasi presisi & otomasi",
+      example: "Contoh: Sistem irigasi presisi & sensor",
     },
     {
       title: "Expertise & Tenaga Ahli / Peneliti",
@@ -65,7 +65,7 @@ export default function HomePage() {
       title: "Partnership & Joint Project",
       desc: "Peluang kerja sama operasional (KSO), proyek bersama multi-pihak, dan kemitraan strategis.",
       icon: Handshake,
-      example: "Contoh: Konsorsium proyek hulu-hilir",
+      example: "Contoh: Proyek konsorsium hulu-hilir",
     },
     {
       title: "Funding & Pendanaan Agribisnis",
@@ -82,7 +82,6 @@ export default function HomePage() {
       title: "Pihak yang Memiliki Kebutuhan",
       desc: "Pihak yang mencari lahan, bahan baku, teknologi, expert/peneliti, pasar, mitra kerja sama, atau pendanaan.",
       actors: "Perusahaan, Startup, Farmer, Researcher, Institusi, Komunitas, hingga Individu.",
-      action: "Submit Kebutuhan (Need)",
       badge: "DEMAND SIDE",
       badgeClass: "bg-[#FEBA27]/20 text-[#9A6A00] border border-[#FEBA27]/40",
       ctaLink: "/dashboard?role=customer",
@@ -93,7 +92,6 @@ export default function HomePage() {
       title: "Pihak yang Memiliki Resource",
       desc: "Pihak yang memiliki lahan, produk, bahan baku, teknologi, expertise, fasilitas, akses pasar, atau peluang kemitraan.",
       actors: "Pemilik lahan, Petani produsen, Vendor teknologi, Pemilik fasilitas gudang, Asosiasi.",
-      action: "Submit Resource / Opportunity",
       badge: "SUPPLY SIDE",
       badgeClass: "bg-[#126A3A]/10 text-[#126A3A] border border-[#126A3A]/20",
       ctaLink: "/dashboard?role=supplier",
@@ -104,7 +102,6 @@ export default function HomePage() {
       title: "Ecosystem Connector & Facilitator",
       desc: "Berperan sebagai layer kurasi: Understand → Discover → Match → Validate → Connect.",
       actors: "Tim Kurasi dan Fasilitator Ekosistem AG Diebra.",
-      action: "Kurasi, Pairing, & Introduksi",
       badge: "FACILITATOR",
       badgeClass: "bg-slate-200 text-slate-800 border border-slate-300",
       ctaLink: "/dashboard?role=admin",
@@ -144,101 +141,167 @@ export default function HomePage() {
   return (
     <div className="space-y-0">
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION (Dark Forest Green Background #101D14)                    */}
+      {/* 1. HERO SECTION (Identical visual structure to agdiebra.com HeroSection)  */}
       {/* ========================================================================= */}
-      <section className="relative bg-[#101D14] text-white pt-16 pb-20 lg:pt-24 lg:pb-28 overflow-hidden">
-        {/* Subtle grid and ambient warm glow */}
+      <section className="relative overflow-hidden min-h-[75dvh] lg:min-h-[760px] flex items-center justify-center bg-[#101D14]">
+        {/* Background gradient base */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-20"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage:
-              "linear-gradient(rgba(18, 106, 58, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(18, 106, 58, 0.15) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
+            background: "linear-gradient(180deg, #16261A 0%, #101D14 100%)",
           }}
-        />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-radial from-[#126A3A]/25 via-[#FEBA27]/10 to-transparent pointer-events-none blur-3xl" />
+        >
+          {/* Authentic image layer with scale */}
+          <div
+            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80')] bg-cover bg-center scale-110"
+            style={{ zIndex: 0 }}
+          />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          {/* Eyebrow badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/15 mb-6 backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-[#FEBA27]" />
-            <span className="font-mono text-xs uppercase tracking-widest text-[#FEBA27] font-bold">
-              AG DIEBRA ECOSYSTEM PLATFORM
-            </span>
-          </div>
+          {/* Green overlay matching agdiebra.com */}
+          <div
+            className="absolute inset-0"
+            style={{
+              zIndex: 0,
+              background:
+                "linear-gradient(180deg, rgba(16,29,20,0.85) 0%, rgba(16,29,20,0.7) 50%, rgba(16,29,20,0.95) 100%)",
+            }}
+          />
 
-          {/* Main Headline */}
-          <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 max-w-4xl mx-auto leading-tight">
-            Penghubung Kebutuhan, Resource, &amp; Kolaborasi{" "}
-            <span className="text-gold-gradient">Ekosistem Agribisnis</span>
-          </h1>
+          {/* Mesh grid overlay */}
+          <div className="absolute inset-0 mesh-grid opacity-25 pointer-events-none select-none" />
+        </div>
 
-          {/* Subtitle directly quoting PDF philosophy */}
-          <p className="font-body text-base sm:text-lg text-white/75 max-w-3xl mx-auto mb-6 leading-relaxed">
-            Anda tidak harus tahu harus mencari ke siapa. Cukup sampaikan kebutuhan atau
-            resource yang Anda miliki, dan AG Diebra membantu menemukan serta menghubungkan
-            pihak yang relevan.
-          </p>
+        {/* Content layer */}
+        <div className="relative z-10 w-full flex items-center justify-center pt-28 lg:pt-36 pb-20 lg:pb-32">
+          <div className="container-main w-full">
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
+              {/* Left headline column */}
+              <div className="lg:col-span-7 text-center lg:text-left relative">
+                {/* Warm radial light behind headline */}
+                <div
+                  className="absolute -top-20 -left-20 w-[150%] h-[150%] pointer-events-none select-none"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 30% 40%, rgba(212, 175, 55, 0.08) 0%, transparent 70%)",
+                  }}
+                />
 
-          {/* Core Philosophy Banner from PDF */}
-          <div className="max-w-2xl mx-auto mb-10 p-4 rounded-xl bg-white/[0.04] border border-white/10 text-xs sm:text-sm text-white/80">
-            <p className="font-mono text-[11px] text-[#FEBA27] uppercase tracking-wider font-semibold mb-1">
-              CORE PRINCIPLE:
-            </p>
-            <p className="italic">
-              Dari: “Saya membutuhkan sesuatu, tetapi tidak tahu harus mencari ke mana.”<br />
-              Menjadi: “Sampaikan kebutuhanmu kepada AG Diebra, dan kami bantu menemukan kemungkinan yang relevan.”
-            </p>
-          </div>
+                {/* Eyebrow */}
+                <p className="font-mono text-xs sm:text-sm tracking-[0.2em] uppercase font-bold text-[#FEBA27] mb-4">
+                  AG DIEBRA ECOSYSTEM PLATFORM
+                </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-            <Link href="/dashboard">
-              <Button
-                variant="primary"
-                icon={<ArrowRight className="w-3.5 h-3.5 text-[#101D14]" />}
-              >
-                Buka Portal Dashboard
-              </Button>
-            </Link>
-            <Link href="/mekanisme">
-              <Button
-                variant="dark"
-                icon={<Compass className="w-3.5 h-3.5 text-[#FEBA27]" />}
-              >
-                Pelajari Alur Sistem
-              </Button>
-            </Link>
-          </div>
+                {/* Main Headline */}
+                <h1 className="font-display font-bold text-white leading-[1.08] tracking-[-0.02em] mb-4 lg:mb-6 text-[clamp(32px,5vw,60px)]">
+                  Connecting Needs &amp; Resources in<br />
+                  <span className="text-gold-gradient">Agribusiness Ecosystem.</span>
+                </h1>
 
-          {/* Core Flow Bar from PDF Page 1 */}
-          <div className="max-w-4xl mx-auto p-5 rounded-2xl bg-[#14231A] border border-white/10 shadow-xl">
-            <p className="font-mono text-[11px] text-white/50 uppercase tracking-widest text-center mb-3">
-              THE CORE FLOW
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 font-display font-bold text-sm sm:text-base">
-              <span className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-[#FEBA27]">
-                Need / Resource
-              </span>
-              <span className="text-white/40">→</span>
-              <span className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-emerald-400">
-                Matching
-              </span>
-              <span className="text-white/40">→</span>
-              <span className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-sky-400">
-                Connection
-              </span>
-              <span className="text-white/40">→</span>
-              <span className="px-3 py-1 rounded-lg bg-[#126A3A]/40 border border-[#126A3A] text-white">
-                Collaboration
-              </span>
+                {/* Subtext directly from Brief PDF */}
+                <p className="font-body text-[clamp(15px,1.1vw,18px)] text-white/75 max-w-xl leading-relaxed font-light mb-8 text-center lg:text-left mx-auto lg:mx-0">
+                  User tidak harus tahu harus mencari ke siapa. Cukup sampaikan kebutuhan
+                  atau resource yang Anda miliki, kemudian AG Diebra membantu menemukan
+                  dan menghubungkan pihak yang relevan.
+                </p>
+
+                {/* Action buttons with signature .btn-partner styling */}
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8">
+                  <Link href="/dashboard" className="btn-partner btn-partner--primary">
+                    <span>Buka Portal Dashboard</span>
+                    <span className="btn-partner__icon" aria-hidden="true">
+                      <ArrowRight className="btn-partner__icon-svg w-3 h-3 text-[#101D14]" />
+                      <ArrowRight className="btn-partner__icon-svg btn-partner__icon-svg--copy w-3 h-3 text-[#101D14]" />
+                    </span>
+                  </Link>
+
+                  <Link href="/mekanisme" className="btn-partner btn-partner--secondary">
+                    <span>Pelajari Alur Sistem</span>
+                    <span className="btn-partner__icon" aria-hidden="true">
+                      <ArrowRight className="btn-partner__icon-svg w-3 h-3 text-[#126A3A]" />
+                      <ArrowRight className="btn-partner__icon-svg btn-partner__icon-svg--copy w-3 h-3 text-[#126A3A]" />
+                    </span>
+                  </Link>
+                </div>
+
+                {/* Core Flow Micro Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-[#D4AF37]/20 text-xs font-mono text-white/70">
+                  <Sparkles className="w-3.5 h-3.5 text-[#FEBA27]" />
+                  <span>Core Flow: Need/Resource → Matching → Connection → Collaboration</span>
+                </div>
+              </div>
+
+              {/* Right column: Floating Information Cards matching agdiebra.com */}
+              <div className="lg:col-span-5 space-y-4">
+                {/* Floating Card 1: Requester */}
+                <div className="group relative rounded-xl border border-[#D4AF37]/15 bg-white/[0.03] backdrop-blur-md p-5 hover:border-[#D4AF37]/40 hover:bg-white/[0.06] transition-all duration-300 shadow-xl overflow-hidden">
+                  <div className="card-shimmer" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#FEBA27]/10 border border-[#FEBA27]/25 flex items-center justify-center text-[#FEBA27] shrink-0">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-[10px] text-[#FEBA27] uppercase tracking-widest font-semibold block mb-1">
+                        DEMAND • REQUESTER
+                      </span>
+                      <h4 className="font-display font-bold text-white text-base mb-1">
+                        Memiliki Kebutuhan Riil
+                      </h4>
+                      <p className="font-body text-xs text-white/65 leading-relaxed">
+                        Perusahaan, startup, petani, atau peneliti yang mencari lahan, bahan baku, teknologi, ahli, pasar, atau pendanaan.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Card 2: Provider */}
+                <div className="group relative rounded-xl border border-[#D4AF37]/15 bg-white/[0.03] backdrop-blur-md p-5 hover:border-[#D4AF37]/40 hover:bg-white/[0.06] transition-all duration-300 shadow-xl overflow-hidden">
+                  <div className="card-shimmer" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0">
+                      <Boxes className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-[10px] text-emerald-400 uppercase tracking-widest font-semibold block mb-1">
+                        SUPPLY • PROVIDER
+                      </span>
+                      <h4 className="font-display font-bold text-white text-base mb-1">
+                        Memiliki Resource / Peluang
+                      </h4>
+                      <p className="font-body text-xs text-white/65 leading-relaxed">
+                        Pihak pemilik lahan nganggur/produktif, hasil panen, alat teknologi, fasilitas gudang, atau akses pasar.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Card 3: AG Diebra Role */}
+                <div className="group relative rounded-xl border border-[#D4AF37]/15 bg-white/[0.03] backdrop-blur-md p-5 hover:border-[#D4AF37]/40 hover:bg-white/[0.06] transition-all duration-300 shadow-xl overflow-hidden">
+                  <div className="card-shimmer" />
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#D4AF37]/10 border border-[#D4AF37]/25 flex items-center justify-center text-[#D4AF37] shrink-0">
+                      <ShieldCheck className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-[10px] text-[#D4AF37] uppercase tracking-widest font-semibold block mb-1">
+                        ECOSYSTEM LAYER • FACILITATOR
+                      </span>
+                      <h4 className="font-display font-bold text-white text-base mb-1">
+                        Kurasi Terarah &amp; Dual-Consent
+                      </h4>
+                      <p className="font-body text-xs text-white/65 leading-relaxed">
+                        Understand → Discover → Match → Validate → Connect. Bukan marketplace terbuka; privasi dan kesepakatan terjaga.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. SECTION: SIAPA PENGGUNANYA? (Light White Background)                   */}
+      {/* 2. SECTION: SIAPA PENGGUNANYA? (Clean Light Background)                   */}
       {/* ========================================================================= */}
       <section className="py-20 lg:py-24 bg-white text-slate-900 border-t border-slate-200/80 relative">
         <div
@@ -249,9 +312,9 @@ export default function HomePage() {
           }}
         />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="container-main relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-semibold text-[#126A3A] mb-2">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
               BAGIAN 2 • DOKUMEN BRIEF
             </p>
             <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
@@ -298,11 +361,12 @@ export default function HomePage() {
                 </div>
 
                 <div className="pt-4 border-t border-slate-200/80">
-                  <Link href={item.ctaLink} className="w-full block">
-                    <button className="w-full py-2.5 px-4 rounded-full font-display text-xs font-bold transition-all flex items-center justify-center gap-2 bg-[#FEBA27] text-[#101D14] hover:bg-[#E5A720] shadow-xs cursor-pointer">
-                      <span>{item.ctaText}</span>
-                      <ArrowUpRight className="w-3.5 h-3.5" />
-                    </button>
+                  <Link href={item.ctaLink} className="btn-partner btn-partner--primary w-full justify-center">
+                    <span>{item.ctaText}</span>
+                    <span className="btn-partner__icon" aria-hidden="true">
+                      <ArrowRight className="btn-partner__icon-svg w-3 h-3 text-[#101D14]" />
+                      <ArrowRight className="btn-partner__icon-svg btn-partner__icon-svg--copy w-3 h-3 text-[#101D14]" />
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -315,17 +379,16 @@ export default function HomePage() {
       {/* 3. SECTION: KATEGORI KEBUTUHAN & RESOURCE (Off-White #F8FAF9)            */}
       {/* ========================================================================= */}
       <section className="py-20 lg:py-24 bg-[#F8FAF9] text-slate-900 border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-main">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-semibold text-[#126A3A] mb-2">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
               LINGKUP KEBUTUHAN &amp; RESOURCE
             </p>
             <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-              Apa Saja yang Dapat Diajukan &amp; Didaftarkan?
+              Kategori yang Dapat Diajukan &amp; Didaftarkan
             </h2>
             <p className="font-body text-slate-600 text-sm sm:text-base leading-relaxed">
-              Kebutuhan dan resource dalam ekosistem mencakup 8 ranah utama yang dapat
-              didaftarkan oleh requester maupun provider.
+              Mencakup 8 ranah utama yang tercantum dalam dokumen konsep sistem AG Diebra.
             </p>
           </div>
 
@@ -359,19 +422,19 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. SECTION: ALUR SISTEM & CONTOH KASUS (Light White Background)           */}
+      {/* 4. SECTION: ALUR SISTEM & STUDI KASUS (Clean White Background)           */}
       {/* ========================================================================= */}
       <section className="py-20 lg:py-24 bg-white text-slate-900 border-t border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="container-main">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-semibold text-[#126A3A] mb-2">
+            <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A] mb-2">
               BAGIAN 3 &amp; 4 • ALUR SISTEM
             </p>
             <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
               Alur Kerja: Dari Pengajuan ke Kolaborasi
             </h2>
             <p className="font-body text-slate-600 text-sm sm:text-base leading-relaxed">
-              Mekanisme kurasi lima tahap yang memastikan setiap kebutuhan dipertemukan
+              Mekanisme kurasi bertahap yang memastikan setiap kebutuhan dipertemukan
               dengan resource yang terbukti sesuai.
             </p>
           </div>
@@ -413,23 +476,23 @@ export default function HomePage() {
             </h3>
 
             <div className="space-y-3 font-body text-xs sm:text-sm text-slate-700 leading-relaxed">
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-white border border-slate-200/80">
+              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
                 <span className="font-mono font-bold text-[#9A6A00] shrink-0">1.</span>
                 <p><strong>Pengajuan:</strong> User A menyampaikan kebutuhan spesifikasi lahan pertanian organik ±2 ha.</p>
               </div>
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-white border border-slate-200/80">
+              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
                 <span className="font-mono font-bold text-[#126A3A] shrink-0">2.</span>
                 <p><strong>Pemahaman Kriteria:</strong> AG Diebra menelaah kriteria, status kesuburan tanah, dan riwayat kimia lahan.</p>
               </div>
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-white border border-slate-200/80">
+              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
                 <span className="font-mono font-bold text-emerald-700 shrink-0">3.</span>
-                <p><strong>Pencarian Potential Match:</strong> Ditemukan Provider yang memiliki lahan ±3 ha yang memenuhi syarat organik.</p>
+                <p><strong>Pencarian Potential Match:</strong> Ditemukan Provider yang memiliki lahan ±3 ha yang berpotensi sesuai.</p>
               </div>
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-white border border-slate-200/80">
+              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-white border border-slate-200/80">
                 <span className="font-mono font-bold text-[#9A6A00] shrink-0">4.</span>
-                <p><strong>Validasi &amp; Persetujuan (Consent):</strong> AG Diebra melakukan validasi awal. Jika kedua pihak setuju, introduction difasilitasi.</p>
+                <p><strong>Validasi &amp; Persetujuan (Consent):</strong> AG Diebra memvalidasi awal. Jika kedua pihak setuju, perkenalan resmi difasilitasi.</p>
               </div>
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-[#126A3A]/10 border border-[#126A3A]/30">
+              <div className="flex items-start gap-3 p-3.5 rounded-lg bg-[#126A3A]/10 border border-[#126A3A]/30">
                 <span className="font-mono font-bold text-[#126A3A] shrink-0">5.</span>
                 <p><strong>Bentuk Hasil Kolaborasi:</strong> Kerja sama lahan, Proyek budidaya bersama, Kemitraan pasokan, atau Riset gabungan.</p>
               </div>
@@ -442,8 +505,8 @@ export default function HomePage() {
       {/* 5. SECTION: PRINSIP PENTING (Off-White #F8FAF9)                           */}
       {/* ========================================================================= */}
       <section className="py-20 lg:py-24 bg-[#F8FAF9] text-slate-900 border-t border-slate-200/80">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-6">
-          <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-semibold text-[#126A3A]">
+        <div className="container-main text-center space-y-6 max-w-4xl mx-auto">
+          <p className="font-mono text-xs sm:text-sm tracking-[0.18em] uppercase font-bold text-[#126A3A]">
             BAGIAN 6 • KONSEP PENTING
           </p>
           <h2 className="font-display text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight">
@@ -472,48 +535,66 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================================= */}
-      {/* 6. SECTION: CTA / ENTRY TO DASHBOARD (Dark Forest Green Background)       */}
+      {/* 6. CTA SECTION (Exact styling from agdiebra.com JourneyTimeline CTA)      */}
       {/* ========================================================================= */}
-      <section className="bg-[#101D14] text-white py-20 lg:py-24 border-t border-white/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="max-w-3xl mx-auto space-y-6">
-            <span className="font-mono text-xs uppercase tracking-widest text-[#FEBA27] font-bold">
-              MULAI BERKOLABORASI
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              Sampaikan Kebutuhan atau Resource Anda
-            </h2>
-            <p className="font-body text-base text-white/70 leading-relaxed">
-              Masuk ke portal dashboard untuk mengajukan kebutuhan yang sedang Anda cari,
-              atau daftarkan kapasitas sumber daya yang siap Anda kerjasamakan.
-            </p>
+      <section className="relative py-20 lg:py-28 bg-[#F8FAF9] text-slate-900 border-t border-slate-200/80 overflow-hidden">
+        {/* Soft ambient background matching agdiebra.com */}
+        <div
+          className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(18, 106, 58, 0.04) 0%, rgba(254, 186, 39, 0.03) 40%, transparent 70%)",
+          }}
+        />
 
-            <div className="pt-6 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/dashboard?role=customer">
-                <Button
-                  variant="primary"
-                  icon={<ArrowRight className="w-3.5 h-3.5 text-[#101D14]" />}
-                >
-                  Portal Requester (Need)
-                </Button>
-              </Link>
-              <Link href="/dashboard?role=supplier">
-                <Button
-                  variant="secondary"
-                  icon={<ArrowRight className="w-3.5 h-3.5 text-[#126A3A]" />}
-                >
-                  Portal Provider (Resource)
-                </Button>
-              </Link>
-              <Link href="/dashboard?role=admin">
-                <Button
-                  variant="dark"
-                  icon={<ShieldCheck className="w-3.5 h-3.5 text-[#FEBA27]" />}
-                >
-                  Meja Kurator
-                </Button>
-              </Link>
-            </div>
+        <div className="container-main relative z-10 text-center">
+          {/* Header */}
+          <div className="mb-4">
+            <p className="font-mono text-sm sm:text-base tracking-[0.18em] uppercase font-bold text-[#126A3A]">
+              START A COLLABORATION
+            </p>
+          </div>
+
+          {/* Quote line matching agdiebra.com */}
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="w-8 h-px bg-[#126A3A]/30" />
+            <p className="font-body text-sm italic text-slate-600 font-medium">
+              &ldquo;Sampaikan kebutuhanmu kepada AG Diebra, dan kami bantu menemukan kemungkinan yang relevan.&rdquo;
+            </p>
+            <div className="w-8 h-px bg-[#126A3A]/30" />
+          </div>
+
+          {/* Headline */}
+          <h4 className="font-display text-[clamp(1.5rem,2.8vw,2.4rem)] font-bold text-slate-900 mb-3 text-balance">
+            Siap Menemukan <span className="text-[#126A3A]">Mitra yang Relevan?</span>
+          </h4>
+          <p className="font-body text-sm md:text-base text-slate-600 mb-8 max-w-md mx-auto text-balance">
+            Masuk ke portal dashboard untuk menyampaikan kebutuhan Anda atau mendaftarkan
+            resource yang siap dikolaborasikan.
+          </p>
+
+          {/* CTA Buttons side by side with signature .btn-partner */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/dashboard" className="btn-partner btn-partner--primary">
+              <span>Buka Portal Dashboard</span>
+              <span className="btn-partner__icon" aria-hidden="true">
+                <ArrowRight className="btn-partner__icon-svg w-3 h-3 text-[#101D14]" />
+                <ArrowRight className="btn-partner__icon-svg btn-partner__icon-svg--copy w-3 h-3 text-[#101D14]" />
+              </span>
+            </Link>
+
+            <a
+              href="https://wa.me/628132120725?text=Halo%20AG%20Diebra,%20saya%20ingin%20berkonsultasi%20mengenai%20Ecosystem%20Platform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-partner btn-partner--secondary"
+            >
+              <span>Konsultasi WhatsApp Kemitraan</span>
+              <span className="btn-partner__icon" aria-hidden="true">
+                <ArrowUpRight className="btn-partner__icon-svg w-3 h-3 text-[#126A3A]" />
+                <ArrowUpRight className="btn-partner__icon-svg btn-partner__icon-svg--copy w-3 h-3 text-[#126A3A]" />
+              </span>
+            </a>
           </div>
         </div>
       </section>

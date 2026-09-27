@@ -97,6 +97,34 @@
   animation-play-state: paused;
 }
 
+/* Container & layout tokens matching agdiebra.com */
+.container-main {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container-main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-main {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.mesh-grid {
+  background-image:
+    linear-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
 /* Signature agdiebra.com .btn-partner button system */
 .btn-partner {
   line-height: 1;
